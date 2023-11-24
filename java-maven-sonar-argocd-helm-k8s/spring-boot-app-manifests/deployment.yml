@@ -9,6 +9,7 @@ spec:
   selector:
     matchLabels:
       app: spring-boot-app
+  serviceAccountName: default
   template:
     metadata:
       labels:
