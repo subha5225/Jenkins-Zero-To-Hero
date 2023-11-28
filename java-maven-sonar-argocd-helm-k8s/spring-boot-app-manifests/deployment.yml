@@ -1,22 +1,21 @@
-7a7p7i7V7e7r7s7i7o7n7:7 7a7p7p7s7/7v7
-7k7i7n7d7:7 7D7e7p7l7o7y7m7e7n7t7
-7m7e7t7a7d7a7t7a7:7
-7 7 7n7a7m7e7:7 7s7p7r7i7n7g7-7b7o7o7t7-7a7p7p7
-7 7 7l7a7b7e7l7s7:7
-7 7 7 7 7a7p7p7:7 7s7p7r7i7n7g7-7b7o7o7t7-7a7p7p7
-7s7p7e7c7:7
-7 7 7r7e7p7l7i7c7a7s7:7 7
-7 7 7s7e7l7e7c7t7o7r7:7
-7 7 7 7 7m7a7t7c7h7L7a7b7e7l7s7:7
-7 7 7 7 7 7 7a7p7p7:7 7s7p7r7i7n7g7-7b7o7o7t7-7a7p7p7
-7 7 7s7e7r7v7i7c7e7A7c7c7o7u7n7t7N7a7m7e7:7 7d7e7f7a7u7l7t7
-7 7 7t7e7m7p7l7a7t7e7:7
-7 7 7 7 7m7e7t7a7d7a7t7a7:7
-7 7 7 7 7 7 7l7a7b7e7l7s7:7
-7 7 7 7 7 7 7 7 7a7p7p7:7 7s7p7r7i7n7g7-7b7o7o7t7-7a7p7p7
-7 7 7 7 7s7p7e7c7:7
-7 7 7 7 7 7 7c7o7n7t7a7i7n7e7r7s7:7
-7 7 7 7 7 7 7-7 7n7a7m7e7:7 7s7p7r7i7n7g7-7b7o7o7t7-7a7p7p7
-7 7 7 7 7 7 7 7 7i7m7a7g7e7:7 7s7u7b7h7a7/7u7l7t7i7m7a7t7e7-7c7i7c7d7:7
-7 7 7 7 7 7 7 7 7p7o7r7t7s7:7
-7 7 7 7 7 7 7 7 7-7 7c7o7n7t7a7i7n7e7r7P7o7r7t7:7 7
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-boot-app
+  labels:
+    app: spring-boot-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spring-boot-app
+  template:
+    metadata:
+      labels:
+        app: spring-boot-app
+    spec:
+      containers:
+      - name: spring-boot-app
+        image: subha5225/ultimate-cicd:3
+        ports:
+        - containerPort: 8080
